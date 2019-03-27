@@ -1,0 +1,9 @@
+public class Animal implements Weighable {
+    private double weight;
+   Animal(double weight){
+       this.weight=weight;
+   }
+    public double getWeight() {
+        return weight;
+    }
+}
