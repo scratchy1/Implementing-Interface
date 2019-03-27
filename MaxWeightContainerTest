@@ -1,0 +1,16 @@
+public class MaxWeightContainerTest {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        MaxWeightContainer mwc = new MaxWeightContainer();
+        Apple apple1 = new Apple(0.56);
+        Animal animal1 = new Animal(0.66);
+        mwc.store(apple1);
+        mwc.store(animal1);
+        Weighable h = mwc.getHeaviest();
+        //System.out.println((Weighable) mwc.getHeaviest()); 
+        //Casten, nur wenn geliefertes Objekt in Variablen der Typen Apple oder Animal abgelegt.
+        System.out.println(h.getWeight());
+    }
+
+}
