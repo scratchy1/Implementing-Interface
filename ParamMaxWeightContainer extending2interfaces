@@ -1,0 +1,22 @@
+public class ParamMaxWeightContainer<T extends Weighable & Printable> {
+    private T heaviest;
+
+    public void store(T element) {
+        if (heaviest == null || element.getWeight() > heaviest.getWeight()) {
+            heaviest = element;
+        }
+        heaviest.print();
+    }
+
+    public T getHeaviest() {
+        return heaviest;
+    }
+}
+
+interface Weighable {
+    double getWeight();
+}
+
+interface Printable {
+    void print();
+}
