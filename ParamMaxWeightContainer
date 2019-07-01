@@ -1,0 +1,27 @@
+public class ParamMaxWeightContainer<T extends Weighable> {
+    private T heaviest;
+
+    public void store(T element) {
+        if (heaviest == null || element.getWeight() > heaviest.getWeight()) {
+            heaviest = element;
+        }
+    }
+
+    public T getHeaviest() {
+        return heaviest;
+    }
+}
+
+interface Weighable {
+    double getWeight();
+}
+
+/*
+ * Verwendern der Klasse die Möglichkeit geben, selbst zu entscheiden, wie der
+ * Elementtyp eines konkreten solchen Behälters aussehen soll, so lange er nur
+ * Subtyp von Weighable ist! Der Verwender soll sich beispielsweise einen
+ * MaxWeightContainer nur für Äpfel oder nur für Personen erzeugen können. Die
+ * Lösung besteht darin, die Klasse MaxWeightContainer zu parametrisieren, dabei
+ * aber bzgl. des Typparameters den Verwender auf Subtypen von Weighable zu
+ * beschränken.
+ */
